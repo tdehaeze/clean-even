@@ -45,10 +45,6 @@
     &:hover {
       border-bottom: $content-link-border;
     }
-
-    &.fancybox {
-      border: 0;
-    }
   }
 
   blockquote {
@@ -95,7 +91,6 @@
   }
 
   @import 'code';
-  @import 'admonition';
 
   .post-summary {
     margin-bottom: 1em;
