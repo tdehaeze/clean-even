@@ -60,10 +60,6 @@ A [favicon generator](https://www.google.com/search?q=favicon+generator) can hel
 
 You can customize something for a single content in the content's front-matter. The [`themes/even/archetypes/default.md`](https://github.com/olOwOlo/hugo-theme-even/tree/master/archetypes/default.md) shows all available params. Copy this file in the `archetypes` folder at the root of your project will be useful.
 
-## Shortcodes
-
-This theme provides `center`,` right`, `left`,` music`, `admonition` shortcodes, and support `center`,` right`, `left` class for the built-in `figure`. See more information from [there](https://blog.olowolo.com/example-site/post/shortcodes/).
-
 ## Theme Color
 
 There are five built-in theme colors ( Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet ), you can config it by changing the `$theme-color-config` value in [`/src/css/_variable.scss`](https://github.com/olOwOlo/hugo-theme-even/blob/master/src/css/_variables.scss#L5-L8).
