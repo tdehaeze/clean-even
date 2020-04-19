@@ -43,15 +43,6 @@ toc:
 readMore:
   other: "Lire la suite..."
 
-reward:
-  other: "Reward"
-
-rewardAlipay:
-  other: "alipay"
-
-rewardWechat:
-  other: "wechat"
-
 wordCount:
   one: "{{ .Count }} mots"
   other: "{{ .Count }} mots"
