@@ -710,12 +710,6 @@ $$ E(\mathbf{v}, \mathbf{h}) = -\sum_{i,j}w_{ij}v_i h_j - \sum_i b_i v_i - \sum_
 
 ## 网易云音乐
 
-```
-{{%/* music "28196554" */%}}
-```
-
-{{% music "28196554" %}}
-
 ## YouTube
 
 ```
