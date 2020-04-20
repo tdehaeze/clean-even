@@ -1,0 +1,4 @@
+#+TITLE: Clean Even Theme for Hugo
+
+* Acknowledgments
+This theme is largely based on the [[https://github.com/olOwOlo/hugo-theme-even][Even theme]].
