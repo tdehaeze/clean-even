@@ -1,0 +1,16 @@
+// Reference Links
+.post .post-content a.reference-link {
+    font-weight: bold;
+    font-style: italic;
+    font-color: $global-font-color;
+    color: $global-font-color;
+}
+
+.post .post-content a.reference-link:hover {
+    border-bottom-color: $theme-color-list;
+}
+
+// Bibtex Backlink Links
+.post .post-content a.bibtex-entry:target {
+   background-color: #ffa;
+}
