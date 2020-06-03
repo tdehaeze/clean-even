@@ -1,0 +1,56 @@
+{{- define "title" }}{{ T "archive" }} - {{ .Site.Title }}{{ end -}}
+
+{{- define "content" }}
+Journal Papers:
+<section id="archive" class="archive">
+{{ range where .Site.RegularPages "Section" "article" }}
+    <div class="archive-post">
+      <span class="archive-post-title">
+        <a href="{{ .Permalink }}" class="archive-post-link">
+          {{ .Title }}
+        </a>
+      </span>
+    </div>
+{{ end }}
+</section>
+
+Conference Papers:
+<section id="archive" class="archive">
+{{ range where .Site.RegularPages "Section" "inproceedings" }}
+    <div class="archive-post">
+      <span class="archive-post-title">
+        <a href="{{ .Permalink }}" class="archive-post-link">
+          {{ .Title }}
+        </a>
+      </span>
+    </div>
+{{ end }}
+</section>
+
+PhD Thesis:
+<section id="archive" class="archive">
+{{ range where .Site.RegularPages "Section" "phdthesis" }}
+    <div class="archive-post">
+      <span class="archive-post-title">
+        <a href="{{ .Permalink }}" class="archive-post-link">
+          {{ .Title }}
+        </a>
+      </span>
+    </div>
+{{ end }}
+</section>
+
+Books:
+<section id="archive" class="archive">
+{{ range where .Site.RegularPages "Section" "book" }}
+    <div class="archive-post">
+      <span class="archive-post-title">
+        <a href="{{ .Permalink }}" class="archive-post-link">
+          {{ .Title }}
+        </a>
+      </span>
+    </div>
+{{ end }}
+</section>
+
+{{- end }}
