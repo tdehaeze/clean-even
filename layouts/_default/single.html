@@ -1,7 +1,10 @@
 {{ define "content" -}}
 <article class="post">
-  <div class="post-content">
-    {{ .Content }}
-  </div>
+    <div class="post-content">
+        {{ .Content }}
+    </div>
 </article>
+<div id="comments">
+    {{ partial "comments.html" $ }}
+</div>
 {{- end }}
