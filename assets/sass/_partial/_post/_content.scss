@@ -61,6 +61,19 @@
     }
   }
 
+  figure {
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    figcaption {
+    }
+  }
+
   img {
     display: inline-block;
     max-width: 100%;

@@ -182,6 +182,13 @@ $content-blockquote-backgroud: rgba($theme-color, 0.05) !default;
 // Border left of the blockquote.
 $content-blockquote-border-left: 3px solid rgba($theme-color, 0.3) !default;
 
+
+// Background color of the important blocks.
+$content-important-backgroud: rgba(#dc322f, 0.05) !default;
+
+// Border left of the important blocks.
+$content-important-border-left: 3px solid rgba(#dc322f, 0.3) !default;
+
 // Border color of the table.
 $content-table-border-color: darken($deputy-color, 3%) !default;
 
