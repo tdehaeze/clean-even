@@ -1,0 +1,73 @@
+@use "sass:color";
+
+// Basic Color Pallette
+$white: #fff;
+$black: #000;
+
+$blue:    hsl(232, 61%, 64%);
+$red:     hsl(360, 61%, 64%);
+$green:   hsl(160, 61%, 64%);
+$yellow:  hsl(55,  61%, 64%);
+$orange:  hsl(32,  61%, 64%);
+$grey:    hsl(0,   0%,  64%);
+$turq:    hsl(191, 61%, 64%);
+
+$pale-blue:   adjust-color($blue,   $lightness: 30%);
+$pale-red:    adjust-color($red,    $lightness: 30%);
+$pale-green:  adjust-color($green,  $lightness: 30%);
+$pale-yellow: adjust-color($yellow, $lightness: 30%);
+$pale-orange: adjust-color($orange, $lightness: 30%);
+$pale-grey:   adjust-color($grey,   $lightness: 30%);
+$pale-turq:   adjust-color($turq,   $lightness: 30%);
+
+$dark-blue:   adjust-color($blue,   $lightness: -30%);
+$dark-red:    adjust-color($red,    $lightness: -30%);
+$dark-green:  adjust-color($green,  $lightness: -30%);
+$dark-yellow: adjust-color($yellow, $lightness: -30%);
+$dark-orange: adjust-color($orange, $lightness: -30%);
+$dark-grey:   adjust-color($grey,   $lightness: -30%);
+$dark-turq:   adjust-color($turq,   $lightness: -30%);
+
+$vivid-blue:   adjust-color($blue,   $saturation: 20%);
+$vivid-red:    adjust-color($red,    $saturation: 20%);
+$vivid-green:  adjust-color($green,  $saturation: 20%);
+$vivid-yellow: adjust-color($yellow, $saturation: 20%);
+$vivid-orange: adjust-color($orange, $saturation: 20%);
+$vivid-turq:   adjust-color($turq,   $saturation: 20%);
+
+
+// main color palette
+$color-primary:             $blue;
+$color-primary-background:  adjust-color($blue, $lightness: -20%);
+$color-secondary:           $green;
+// $color-accent:              $patina;
+$color-shadow:              hsl(195, 7%, 89%);
+$color-shadow-light:        hsl(195, 7%, 95%);
+// $color-note:                hsl(195, 7%, 99%);
+
+
+// Common colors
+$color-background:             hsl(204, 16%, 94%);
+$color-background-light:       hsl(0, 0%, 99%);
+$color-background-med:         hsl(0, 0%, 40%);
+$color-background-dark:        hsl(0, 0%, 20%);
+$color-background-obscur:      hsl(0, 0%, 12%);
+// $color-background-shade:    $iron;
+// $color-background-invert:   $hopbush;
+//
+$color-text:                  hsl(0, 0%, 25%);
+$color-text-invert:           hsl(0, 0%, 99%);
+$color-text-shadow:           hsl(0, 0%, 65%);
+$color-caption:               $color-text;
+$color-caption-num:           $dark-blue;
+$color-block-title:           $color-text-invert;
+
+// $color-text-strong:         $midnight-blue;
+// $color-text-heading:        $regent-grey;
+// $color-text-invert:         rgba($color-background, .75);
+// $color-text-strong-invert:  $color-background;
+
+// // Links
+$color-link:                $color-primary;
+$color-link-hover:          $color-primary;
+$color-link-visited:        $color-primary;
