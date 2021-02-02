@@ -1,0 +1,22 @@
+// Sans Serif Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+// Serif Font
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+// MonoSpace Font
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+// Font Awesome
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css');
+
+
+
+$sans-serif: Roboto, sans-serif, FontAwesome;
+$serif: Merriweather, Georgia, "Times New Roman", serif, FontAwesome;
+$mono: "Source Code Pro", monospace;
+$fa: FontAwesome;
+
+$light: 300;
+$normal: 400;
+$bold: 700;

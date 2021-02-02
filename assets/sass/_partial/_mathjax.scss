@@ -1,4 +1,7 @@
-mjx-box {
-    padding: 10px;
-    background: $pale-blue;
+mjx-menclose {
+    mjx-box {
+        padding: 0.5em !important;
+        border-radius: 0.2em;
+        background: $pale-blue;
+    }
 }

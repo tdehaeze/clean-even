@@ -1,0 +1,60 @@
+$types: (
+    seealso:    (color: $pale-grey,   title-color: $grey,   icon: "\f05a"),
+    definition: (color: $pale-red,    title-color: $red,    icon: "\f005"),
+    exampl:     (color: $pale-green,  title-color: $green,  icon: "\f013"),
+    question:   (color: $pale-yellow, title-color: $yellow, icon: "\f059"),
+    exercice:   (color: $pale-yellow, title-color: $yellow, icon: "\f040"),
+    answer:     (color: $pale-turq,   title-color: $turq,   icon: "\f00c"),
+    summary:    (color: $pale-blue,   title-color: $blue,   icon: "\f02e"),
+    note:       (color: $pale-blue,   title-color: $blue,   icon: "\f249"),
+    hint:       (color: $pale-grey,   title-color: $grey,   icon: "\f05a"),
+    important:  (color: $pale-red,    title-color: $red,    icon: "\f005"),
+    caution:    (color: $pale-orange, title-color: $orange, icon: "\f071"),
+    warning:    (color: $pale-orange, title-color: $orange, icon: "\f071")
+);
+
+
+@each $label, $map in $types {
+
+    .#{$label} {
+        padding:12px;
+        line-height:24px;
+        margin-bottom:24px;
+        -webkit-font-smoothing:antialiased;
+
+        background: map-get($map, color);
+
+        > p:last-child {
+            margin-bottom: 0;
+        }
+
+        &.admonition-title{
+            line-height: 1;
+            background: map-get($map, title-color);
+            margin-bottom: 0px;
+
+            &:before{
+                font-family: $fa;
+                font-weight: 900;
+                content: map-get($map, icon);
+            }
+        }
+    }
+}
+
+#content .admonition-title{
+    color: $color-block-title;
+    font-weight: $bold;
+    display: block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+
+    &:before{
+        margin-right: 8px;
+        font-family: $fa;
+        display: inline-block;
+        font-weight: 900;
+        line-height: 1;
+        text-decoration: inherit;
+    }
+}
