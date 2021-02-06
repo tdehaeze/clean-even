@@ -24,7 +24,7 @@ $types: (
 
         background: map-get($map, color);
 
-        > p:last-child {
+        > p:first-child {
             margin-top: 0;
         }
 
