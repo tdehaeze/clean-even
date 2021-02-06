@@ -5,6 +5,14 @@
 .post-content {
   word-wrap: break-word;
 
+  .info {
+    font-size: 0.8em;
+    border-bottom: 1px solid grey;
+    dt {
+      font-weight: bold;
+    }
+  }
+
   @for $i from 1 through 6 {
     h#{$i} {
       font-weight: 400;
@@ -103,8 +111,6 @@
       }
     }
   }
-
-  @import 'code';
 
   .post-summary {
     margin-bottom: 1em;
