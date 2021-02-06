@@ -1,5 +1,6 @@
 node_modules/
 .idea/
+.log/
 static/dist/*.min.js.map
 static/dist/*.min.css.map
 *.iml
