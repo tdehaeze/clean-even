@@ -32,7 +32,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
 
 <!-- Styles -->
-{{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+{{ $style := resources.Get "sass/main.scss" | toCSS | fingerprint }}
 <link href="{{ $style.Permalink }}" rel="stylesheet">
 
 <!-- custom css -->
