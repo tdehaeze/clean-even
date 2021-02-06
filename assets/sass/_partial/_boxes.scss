@@ -25,6 +25,10 @@ $types: (
         background: map-get($map, color);
 
         > p:last-child {
+            margin-top: 0;
+        }
+
+        > p:last-child {
             margin-bottom: 0;
         }
 
