@@ -1,0 +1,20 @@
+.list-zettels {
+    a {
+        color: $color-link;
+        font-weight: $bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .keywords {
+        font-size: 0.8em;
+        color: $post-meta-font-color;
+        &::before {
+            content: '·';
+        }
+    }
+    .description {
+        color: $post-meta-font-color;
+    }
+}

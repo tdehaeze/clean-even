@@ -2,4 +2,11 @@
 
 This is the main page. Work in progress.
 
+  <section id="posts" class="posts">
+    {{- $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+    {{- range $paginator.Pages -}}
+      {{ .Render "summary" }}
+    {{ end -}}
+  </section>
+
 {{- end -}}

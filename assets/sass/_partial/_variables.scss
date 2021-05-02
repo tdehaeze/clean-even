@@ -9,10 +9,10 @@ $theme-color-config: 'Default';
 
 // Default theme color map
 $theme-color-map: (
-  'Default': #c05b4d #f8f5ec,
-  'Mint Green': #16982B #f5f5f5,
+  'Default':     #c05b4d #f8f5ec,
+  'Mint Green':  #16982B #f5f5f5,
   'Cobalt Blue': #0047AB #f0f2f5,
-  'Hot Pink': #FF69B4 #f8f5f5,
+  'Hot Pink':    #FF69B4 #f8f5f5,
   'Dark Violet': #9932CC #f5f4fa
 );
 
@@ -31,11 +31,11 @@ $deputy-color: nth($theme-color-list, 2) !default;
 
 
 // ========== Color ========== //
-$black: #0a0a0a !default;
-$white: #fefefe !default;
+$black:      #0a0a0a !default;
+$white:      #fefefe !default;
 $light-gray: #e6e6e6 !default;
-$gray: #cacaca !default;
-$dark-gray: #8a8a8a !default;
+$gray:       #cacaca !default;
+$dark-gray:  #8a8a8a !default;
 
 
 // ========== Global ========== //

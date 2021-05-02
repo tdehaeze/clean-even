@@ -1,15 +1,26 @@
 {{- define "title" }}{{ T "archive" }} - {{ .Site.Title }}{{ end -}}
 
 {{- define "content" }}
-<section id="archive" class="archive">
-  {{- range $index, $element := .Pages -}}
-    <div class="archive-post">
-      <span class="archive-post-title">
-        <a href="{{ $element.RelPermalink }}" class="archive-post-link">
-          {{ .Title }}
-        </a>
-      </span>
-    </div>
-  {{- end -}}
+<section class="list-zettels">
+    <ul>
+        {{- range $index, $element := .Pages -}}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title | title }}
+            </a>
+            {{ with .Keywords }}
+            <span class="keywords">
+                {{ . }}
+            </span>
+            {{ end }}
+            {{ with .Description }}
+            <div class="description">
+                {{ . }}
+            </div>
+            {{ end }}
+        </li>
+        {{- end -}}
+    </ul>
 </section>
+
 {{- end }}

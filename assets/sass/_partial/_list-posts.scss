@@ -1,0 +1,66 @@
+.posts {
+    .post-header {
+        margin-bottom: 1em;
+
+        // Title
+        .post-title {
+            text-align: left;
+            font-size: 2em;
+            font-weight: $normal;
+            font-family: $serif;
+        }
+
+        .post-link {
+            @include underline-from-center;
+        }
+
+        // Meta (date, categories)
+        .post-meta {
+            font-size: 0.9em;
+            color: $post-meta-font-color;
+
+            .post-time {
+                font-style: italic;
+            }
+
+            .post-category {
+                a {
+                    color: inherit;
+
+                    &::before {
+                        content: '·';
+                    }
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+
+            .more-meta {
+                &::before {
+                    content: '·';
+                }
+            }
+
+        }
+    }
+
+    .post-content {
+        .post-summary {
+            margin-bottom: 0.5em;
+        }
+
+        .read-more {
+            .read-more-link {
+                color: $theme-color;
+                font-size: 0.9em;
+                font-family: $global-serif-font-family;
+
+                &:hover {
+                    border-bottom: $post-readMore-border-bottom;
+                }
+            }
+        }
+    }
+
+}

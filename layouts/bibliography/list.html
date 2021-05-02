@@ -1,56 +1,69 @@
 {{- define "title" }}{{ T "archive" }} - {{ .Site.Title }}{{ end -}}
 
 {{- define "content" }}
-Books:
-<section id="archive" class="archive">
-{{ range where .Site.RegularPages "Section" "book" }}
-    <div class="archive-post">
-      <span class="archive-post-title">
-        <a href="{{ .Permalink }}" class="archive-post-link">
-          {{ .Title }}
-        </a>
-      </span>
-    </div>
-{{ end }}
+
+<section id="books" class="list-bibliography">
+    <span class="list-title">Books:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "book" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title | title }}
+            </a>
+            {{ with .Keywords }}
+            <span class="keywords">
+                {{ . }}
+            </span>
+            {{ end }}
+            {{ with .Description }}
+            <div class="description">
+                {{ . }}
+            </div>
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
 </section>
 
-PhD Thesis:
-<section id="archive" class="archive">
-{{ range where .Site.RegularPages "Section" "phdthesis" }}
-    <div class="archive-post">
-      <span class="archive-post-title">
-        <a href="{{ .Permalink }}" class="archive-post-link">
-          {{ .Title }}
-        </a>
-      </span>
-    </div>
-{{ end }}
+
+<section id="phdthesis" class="list-bibliography">
+    <span class="list-title">PhD Thesis:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "phdthesis" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 </section>
 
-Journal Papers:
-<section id="archive" class="archive">
-{{ range where .Site.RegularPages "Section" "article" }}
-    <div class="archive-post">
-      <span class="archive-post-title">
-        <a href="{{ .Permalink }}" class="archive-post-link">
-          {{ .Title }}
-        </a>
-      </span>
-    </div>
-{{ end }}
+
+<section id="article" class="list-bibliography">
+    <span>Journal Papers:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "article" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 </section>
 
-Conference Papers:
-<section id="archive" class="archive">
-{{ range where .Site.RegularPages "Section" "inproceedings" }}
-    <div class="archive-post">
-      <span class="archive-post-title">
-        <a href="{{ .Permalink }}" class="archive-post-link">
-          {{ .Title }}
-        </a>
-      </span>
-    </div>
-{{ end }}
+<section id="conference" class="list-bibliography">
+    <span class="list-title">Conference Papers:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "conference" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 </section>
 
 {{- end }}
