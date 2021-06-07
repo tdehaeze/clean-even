@@ -12,7 +12,7 @@
             </a>
             {{ with .Keywords }}
             <span class="keywords">
-                {{ . }}
+                [{{ range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e | title }}{{ end }}]
             </span>
             {{ end }}
             {{ with .Description }}
@@ -41,7 +41,7 @@
 
 
 <section id="article" class="list-bibliography">
-    <span>Journal Papers:</span>
+    <span class="list-title">Journal Papers:</span>
     <ul>
         {{ range where .Site.RegularPages "Section" "article" }}
         <li>
@@ -53,17 +53,17 @@
     </ul>
 </section>
 
-<section id="conference" class="list-bibliography">
-    <span class="list-title">Conference Papers:</span>
-    <ul>
-        {{ range where .Site.RegularPages "Section" "conference" }}
-        <li>
-            <a href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
-</section>
+<!-- <section id="conference" class="list-bibliography">
+     <span class="list-title">Conference Papers:</span>
+     <ul>
+     {{ range where .Site.RegularPages "Section" "conference" }}
+     <li>
+     <a href="{{ .Permalink }}">
+     {{ .Title }}
+     </a>
+     </li>
+     {{ end }}
+     </ul>
+     </section> -->
 
 {{- end }}
