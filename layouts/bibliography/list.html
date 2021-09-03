@@ -53,10 +53,31 @@
     </ul>
 </section>
 
-<!-- <section id="conference" class="list-bibliography">
-     <span class="list-title">Conference Papers:</span>
+<section id="others" class="list-bibliography">
+     <span class="list-title">Others:</span>
      <ul>
-     {{ range where .Site.RegularPages "Section" "conference" }}
+     {{ range where .Site.RegularPages "Section" "inproceedings" }}
+     <li>
+     <a href="{{ .Permalink }}">
+     {{ .Title }}
+     </a>
+     </li>
+     {{ end }}
+     {{ range where .Site.RegularPages "Section" "techreport" }}
+     <li>
+     <a href="{{ .Permalink }}">
+     {{ .Title }}
+     </a>
+     </li>
+     {{ end }}
+     {{ range where .Site.RegularPages "Section" "inbook" }}
+     <li>
+     <a href="{{ .Permalink }}">
+     {{ .Title }}
+     </a>
+     </li>
+     {{ end }}
+     {{ range where .Site.RegularPages "Section" "websites" }}
      <li>
      <a href="{{ .Permalink }}">
      {{ .Title }}
@@ -64,6 +85,6 @@
      </li>
      {{ end }}
      </ul>
-     </section> -->
+</section>
 
 {{- end }}
