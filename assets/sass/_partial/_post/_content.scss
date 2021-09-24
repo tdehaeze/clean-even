@@ -209,4 +209,33 @@
     overflow-y: hidden;
     padding-right: 1px;
   }
+
+  // Tables
+  .table-caption {
+    text-align: center;
+  }
+  table {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    border-spacing: 0;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.125);
+
+    thead {
+      background: $deputy-color;
+    }
+
+    th, td {
+      padding: 5px 15px;
+      border: 1px double $content-table-border-color;
+    }
+
+    td {
+      background: $color-background-light;
+    }
+
+    tr:hover {
+      background-color: $deputy-color;
+    }
+  }
 }
