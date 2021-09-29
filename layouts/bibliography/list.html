@@ -31,7 +31,9 @@
         {{ range where .Site.RegularPages "Section" "phdthesis" }}
         <li>
             <a href="{{ .Permalink }}">
-                {{ .Title }}
+                {{ .Params.ref_author }},
+                "{{ .Title }}",
+                {{ .Params.ref_year }}
             </a>
         </li>
         {{ end }}
