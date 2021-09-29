@@ -25,7 +25,6 @@
     </ul>
 </section>
 
-
 <section id="phdthesis" class="list-bibliography">
     <span class="list-title">PhD Thesis:</span>
     <ul>
@@ -39,9 +38,34 @@
     </ul>
 </section>
 
+<section id="inbook" class="list-bibliography">
+    <span class="list-title">In books:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "inbook" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+
+<section id="techreport" class="list-bibliography">
+    <span class="list-title">Tech reports:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "techreport" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
 
 <section id="article" class="list-bibliography">
-    <span class="list-title">Journal Papers:</span>
+    <span class="list-title">Journal articles:</span>
     <ul>
         {{ range where .Site.RegularPages "Section" "article" }}
         <li>
@@ -53,38 +77,30 @@
     </ul>
 </section>
 
-<section id="others" class="list-bibliography">
-     <span class="list-title">Others:</span>
-     <ul>
-     {{ range where .Site.RegularPages "Section" "inproceedings" }}
-     <li>
-     <a href="{{ .Permalink }}">
-     {{ .Title }}
-     </a>
-     </li>
-     {{ end }}
-     {{ range where .Site.RegularPages "Section" "techreport" }}
-     <li>
-     <a href="{{ .Permalink }}">
-     {{ .Title }}
-     </a>
-     </li>
-     {{ end }}
-     {{ range where .Site.RegularPages "Section" "inbook" }}
-     <li>
-     <a href="{{ .Permalink }}">
-     {{ .Title }}
-     </a>
-     </li>
-     {{ end }}
-     {{ range where .Site.RegularPages "Section" "websites" }}
-     <li>
-     <a href="{{ .Permalink }}">
-     {{ .Title }}
-     </a>
-     </li>
-     {{ end }}
-     </ul>
+<section id="inproceedings" class="list-bibliography">
+    <span class="list-title">In proceedings:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "inproceedings" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+
+<section id="websites" class="list-bibliography">
+    <span class="list-title">Websites:</span>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "websites" }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 </section>
 
 {{- end }}
