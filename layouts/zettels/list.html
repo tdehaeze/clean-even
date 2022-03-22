@@ -25,9 +25,33 @@
 </section>
 
 <section class="list-zettels">
+    <span class="list-title">ESRF Specific:</span>
+    <ul>
+        {{- range where .Pages "Params.category" "esrf" -}}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title | title }}
+            </a>
+            {{ with .Keywords }}
+            <span class="keywords">
+                {{ . }}
+            </span>
+            {{ end }}
+            {{ with .Description }}
+            <div class="description">
+                {{ . }}
+            </div>
+            {{ end }}
+        </li>
+        {{- end -}}
+    </ul>
+</section>
+
+
+<section class="list-zettels">
     <span class="list-title">Other:</span>
     <ul>
-        {{- range where .Pages "Params.category" "!=" "equipment" -}}
+        {{- range (where (where .Pages "Params.category" "!=" "equipment") "Params.category" "!=" "esrf") -}}
         <li>
             <a href="{{ .Permalink }}">
                 {{ .Title | title }}

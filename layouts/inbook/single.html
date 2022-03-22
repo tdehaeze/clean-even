@@ -13,6 +13,9 @@
         {{ .Content }}
     </div>
 
+    <!-- Backlinks -->
+    {{ partial "backlinks" . }}
+
     <footer class="post-footer">
         {{ with .Params.tags -}}
         <div class="post-tags">
