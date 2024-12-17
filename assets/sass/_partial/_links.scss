@@ -14,31 +14,3 @@
 .post .post-content a.bibtex-entry:target {
    background-color: #ffa;
 }
-
-// Highlight link target
-:target {
-	-webkit-animation: target-fade 1s;
-	-moz-animation: target-fade 1s;
-	-o-animation: target-fade 1s;
-	animation: target-fade 1s;
-}
-
-@-webkit-keyframes target-fade {
-	from { background-color: $red; } /* [1] */
-	to { background-color: transparent; }
-}
-
-@-moz-keyframes target-fade {
-	from { background-color: $red; } /* [1] */
-	to { background-color: transparent; }
-}
-
-@-o-keyframes target-fade {
-	from { background-color: $red; } /* [1] */
-	to { background-color: transparent; }
-}
-
-@keyframes target-fade {
-	from { background-color: $red; } /* [1] */
-	to { background-color: transparent; }
-}
