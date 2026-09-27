@@ -9,7 +9,7 @@
 
 <div class="copyright">
   <span class="power-by">
-    {{ (printf (T "powered") `<a class="hexo-link" href="https://gohugo.io">Hugo</a>`) | safeHTML }}
+    {{ (printf (T "powered") `<a class="hexo-link" href="https://gohugo.io">Hugo</a>`)  | safeHTML }}
   </span>
 
   <span class="copyright-year">
@@ -22,6 +22,6 @@
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
-    <span class="author">{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}</span>
+    <span class="author">{{if .Site.Copyright }}{{ .Site.Copyright  | safeHTML }}{{ else }}{{ .Site.Params.author.name | default .Site.Title | safeHTML }}{{ end }}</span>
   </span>
 </div>
