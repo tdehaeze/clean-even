@@ -35,7 +35,7 @@
 <script type="text/javascript" src="{{ $js.Permalink }}"></script>
 
 <!-- mathjax.JS -->
-{{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome) }}
+{{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome .IsSection) }}
 <script type="text/javascript">
  window.MathJax = {
      loader: {
