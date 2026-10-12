@@ -14,4 +14,5 @@ if (window.hljs) {
   Even.highlight();
 } else {
   Even.chroma();
+  Even.codeTools();
 }

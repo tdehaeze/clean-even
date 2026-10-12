@@ -164,6 +164,88 @@ Even.chroma = function() {
   }
 };
 
+// Copy and fold buttons in the header bar of the code blocks.
+// Blocks with the "folded" class (e.g. `:folded yes` in Org) start folded.
+Even.codeTools = function() {
+  const ICONS = {
+    copy: '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5h-5a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 1.5 1.5h.5"/></svg>',
+    check: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>',
+    fold: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>'
+  };
+
+  const copyText = function(text) {
+    // The Clipboard API is only available in secure contexts (https, localhost)
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      ok ? resolve() : reject(new Error('copy failed'));
+    });
+  };
+
+  const makeButton = function(name, label) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'code-tools-' + name;
+    button.title = label;
+    button.setAttribute('aria-label', label);
+    button.innerHTML = ICONS[name];
+    return button;
+  };
+
+  const blocks = document.querySelectorAll('.highlight > .chroma');
+  for (let i = 0; i < blocks.length; i++) {
+    const wrapper = blocks[i].parentElement;
+    // Code cell only (not the line numbers)
+    const code = blocks[i].querySelector('code[data-lang]') || blocks[i].querySelector('code');
+    if (!code) continue;
+
+    const tools = document.createElement('div');
+    tools.className = 'code-tools';
+    const copyButton = makeButton('copy', 'Copy');
+    const foldButton = makeButton('fold', 'Fold');
+    tools.appendChild(copyButton);
+    tools.appendChild(foldButton);
+
+    wrapper.classList.add('code-block');
+    wrapper.insertBefore(tools, blocks[i]);
+
+    let resetTimer;
+    copyButton.addEventListener('click', function() {
+      copyText(code.textContent.replace(/\n$/, '')).then(function() {
+        copyButton.innerHTML = ICONS.check;
+        copyButton.title = 'Copied';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(function() {
+          copyButton.innerHTML = ICONS.copy;
+          copyButton.title = 'Copy';
+        }, 1500);
+      });
+    });
+
+    const setFolded = function(folded) {
+      wrapper.classList.toggle('is-folded', folded);
+      foldButton.setAttribute('aria-expanded', String(!folded));
+      foldButton.title = folded ? 'Unfold' : 'Fold';
+      foldButton.setAttribute('aria-label', foldButton.title);
+    };
+    setFolded(wrapper.classList.contains('folded'));
+    foldButton.addEventListener('click', function() {
+      setFolded(!wrapper.classList.contains('is-folded'));
+    });
+  }
+};
+
 Even.toc = function() {
   const tocContainer = document.getElementById('post-toc');
   if (tocContainer !== null) {

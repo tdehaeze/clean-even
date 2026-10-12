@@ -287,4 +287,78 @@
     /* GenericSubheading */  .gu { color: #d33682 }
     /* GenericTraceback */  .gt { color: #d33682 }
   }
+
+  // Code blocks with copy / fold buttons (see Even.codeTools)
+  $code-bar-height: calc(#{$code-font-size} * #{$global-lineheight} + 4px);
+
+  .highlight.code-block {
+    position: relative;
+    margin: 1em 0;
+
+    > .chroma {
+      margin: 0;
+    }
+
+    &.is-folded > .chroma {
+      height: $code-bar-height;
+      overflow: hidden;
+    }
+  }
+
+  .code-tools {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    height: $code-bar-height;
+    padding: 0 4px;
+    font-size: $code-font-size;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.8em;
+      height: 100%;
+      padding: 0;
+      border: none;
+      background: none;
+      color: darken($gray, 10%);
+      cursor: pointer;
+
+      &:hover,
+      &:focus-visible {
+        color: $global-font-color;
+      }
+    }
+
+    svg {
+      width: 1.1em;
+      height: 1.1em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .code-tools-fold svg {
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .is-folded .code-tools-fold svg {
+    transform: rotate(-90deg);
+  }
+
+  @media print {
+    .code-tools {
+      display: none;
+    }
+
+    .highlight.code-block.is-folded > .chroma {
+      height: auto;
+    }
+  }
 }
