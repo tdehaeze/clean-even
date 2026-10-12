@@ -2,10 +2,11 @@
 
 {{- define "content" }}
 
+{{ with where .Site.RegularPages "Section" "book" }}
 <section id="books" class="list-bibliography">
     <span class="list-title">Books:</span>
     <ul>
-        {{ range where .Site.RegularPages "Section" "book" }}
+        {{ range . }}
         <li>
             <a href="{{ .Permalink }}">
                 {{ .Title | title }}
@@ -24,11 +25,13 @@
         {{ end }}
     </ul>
 </section>
+{{ end }}
 
+{{ with where .Site.RegularPages "Section" "phdthesis" }}
 <section id="phdthesis" class="list-bibliography">
     <span class="list-title">PhD Theses:</span>
     <ul>
-        {{ range where .Site.RegularPages "Section" "phdthesis" }}
+        {{ range . }}
         <li>
             <a href="{{ .Permalink }}">
                 {{ .Params.ref_author }},
@@ -39,11 +42,13 @@
         {{ end }}
     </ul>
 </section>
+{{ end }}
 
+{{ with where .Site.RegularPages "Section" "in" (slice "article" "inproceedings" "inbook" "techreport") }}
 <section id="articles" class="list-bibliography">
     <span class="list-title">Articles:</span>
     <ul>
-        {{ range where .Site.RegularPages "Section" "in" (slice "article" "inproceedings" "inbook" "techreport") }}
+        {{ range . }}
         <li>
             <a href="{{ .Permalink }}">
                 {{ .Title }}
@@ -52,11 +57,13 @@
         {{ end }}
     </ul>
 </section>
+{{ end }}
 
+{{ with where .Site.RegularPages "Section" "websites" }}
 <section id="websites" class="list-bibliography">
     <span class="list-title">Websites:</span>
     <ul>
-        {{ range where .Site.RegularPages "Section" "websites" }}
+        {{ range . }}
         <li>
             <a href="{{ .Permalink }}">
                 {{ .Title }}
@@ -65,5 +72,6 @@
         {{ end }}
     </ul>
 </section>
+{{ end }}
 
 {{- end }}
