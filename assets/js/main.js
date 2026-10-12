@@ -1,8 +1,8 @@
 $(document).ready(function () {
+  Boxes.setup();
   Even.backToTop();
   Even.mobileNavbar();
   Even.toc();
-  Boxes.setup();
 });
 
 Even.responsiveTable();

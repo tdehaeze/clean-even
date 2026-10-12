@@ -51,11 +51,13 @@ Even.mobileNavbar = function() {
 Even._initToc = function() {
   const SPACING = 20;
   const $toc = $('.post-toc');
-  const $footer = $('.post-footer');
+  // Pages without a post footer (e.g. research pages) stop at the end of the content
+  const $footer = $('.post-footer').length ? $('.post-footer') : $('.post-content');
 
   if ($toc.length) {
     const minScrollTop = $toc.offset().top - SPACING;
-    const maxScrollTop = $footer.offset().top - $toc.height() - SPACING;
+    const footerTop = $footer.is('.post-footer') ? $footer.offset().top : $footer.offset().top + $footer.outerHeight();
+    const maxScrollTop = footerTop - $toc.height() - SPACING;
 
     const tocState = {
       start: {

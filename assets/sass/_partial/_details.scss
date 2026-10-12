@@ -1,0 +1,41 @@
+// Foldable blocks (e.g. "Hint" and "Results" inside exercices)
+.post-content details {
+    background: rgba($white, 0.6);
+    border: 1px solid $grey;
+    border-radius: 3px;
+    margin: 12px 0;
+    padding: 0 12px;
+
+    > summary {
+        cursor: pointer;
+        outline: 0;
+        padding: 8px 0;
+        color: $dark-grey;
+        font-weight: $bold;
+
+        &::after {
+            float: right;
+            font-size: 0.85em;
+            font-weight: normal;
+            color: $grey;
+            content: "Click to unfold";
+        }
+    }
+
+    &[open] {
+        padding-bottom: 12px;
+
+        > summary {
+            border-bottom: 1px solid $pale-grey;
+            margin-bottom: 12px;
+
+            &::after {
+                content: "Click to fold";
+            }
+        }
+    }
+
+    > p:last-child {
+        margin-bottom: 0;
+    }
+}
