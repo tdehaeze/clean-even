@@ -26,7 +26,7 @@
 </section>
 
 <section id="phdthesis" class="list-bibliography">
-    <span class="list-title">PhD Thesis:</span>
+    <span class="list-title">PhD Theses:</span>
     <ul>
         {{ range where .Site.RegularPages "Section" "phdthesis" }}
         <li>
@@ -40,49 +40,10 @@
     </ul>
 </section>
 
-<section id="inbook" class="list-bibliography">
-    <span class="list-title">In books:</span>
+<section id="articles" class="list-bibliography">
+    <span class="list-title">Articles:</span>
     <ul>
-        {{ range where .Site.RegularPages "Section" "inbook" }}
-        <li>
-            <a href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
-</section>
-
-<section id="techreport" class="list-bibliography">
-    <span class="list-title">Tech reports:</span>
-    <ul>
-        {{ range where .Site.RegularPages "Section" "techreport" }}
-        <li>
-            <a href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
-</section>
-
-<section id="article" class="list-bibliography">
-    <span class="list-title">Journal articles:</span>
-    <ul>
-        {{ range where .Site.RegularPages "Section" "article" }}
-        <li>
-            <a href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
-</section>
-
-<section id="inproceedings" class="list-bibliography">
-    <span class="list-title">In proceedings:</span>
-    <ul>
-        {{ range where .Site.RegularPages "Section" "inproceedings" }}
+        {{ range where .Site.RegularPages "Section" "in" (slice "article" "inproceedings" "inbook" "techreport") }}
         <li>
             <a href="{{ .Permalink }}">
                 {{ .Title }}
